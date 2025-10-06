@@ -1,0 +1,299 @@
+<!doctype html>
+<html lang="en">
+<head>
+  <meta charset="utf-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1" />
+  <title>Ag‑Tech Canada — Remote Connectivity for Agriculture & Heavy Trucks</title>
+  <meta name="description" content="Ag‑Tech Canada delivers rugged telemetry, cellular/satellite connectivity, and remote monitoring solutions for farms and heavy‑duty fleets across Canada." />
+  <meta name="robots" content="index,follow" />
+  <meta property="og:title" content="Ag‑Tech Canada — Remote Connectivity for Agriculture & Heavy Trucks" />
+  <meta property="og:description" content="Rugged telemetry + reliable connectivity. Grain, pumps, weather, soil, reefers, ELD/diagnostics, and more." />
+  <meta property="og:type" content="website" />
+  <meta property="og:url" content="https://ag-tech.ca" />
+  <meta name="theme-color" content="#0f172a" />
+  <link rel="icon" href="/favicon.ico" />
+  <style>
+    :root {
+      --bg: #0b1220;          /* slate-950 */
+      --card: #0f172a;        /* slate-900 */
+      --muted: #94a3b8;       /* slate-400 */
+      --text: #e5e7eb;        /* slate-200 */
+      --brand: #22d3ee;       /* cyan-400 */
+      --accent: #a78bfa;      /* violet-400 */
+      --ok: #34d399;          /* emerald-400 */
+      --warn: #fbbf24;        /* amber-400 */
+      --danger: #f87171;      /* red-400 */
+      --ring: rgba(34, 211, 238, .35);
+      --maxw: 1200px;
+      --radius: 18px;
+      --shadow: 0 10px 30px rgba(0,0,0,.35);
+    }
+    * { box-sizing: border-box }
+    html, body { height: 100% }
+    body {
+      margin: 0; font-family: ui-sans-serif, system-ui, -apple-system, Segoe UI, Roboto, "Helvetica Neue", Inter, Arial, "Apple Color Emoji", "Segoe UI Emoji";
+      background: radial-gradient(1200px 600px at 70% -10%, #0ea5e9 0%, transparent 50%),
+                  radial-gradient(900px 450px at 20% -10%, #8b5cf6 0%, transparent 45%),
+                  var(--bg);
+      color: var(--text);
+      line-height: 1.5;
+    }
+    a { color: var(--brand); text-decoration: none }
+    a:hover { text-decoration: underline }
+    .container { max-width: var(--maxw); margin: 0 auto; padding: 0 1.25rem }
+    header {
+      position: sticky; top: 0; backdrop-filter: saturate(1.2) blur(8px);
+      background: rgba(11,18,32,.7); border-bottom: 1px solid rgba(148,163,184,.15); z-index: 40;
+    }
+    .nav { display: flex; align-items: center; justify-content: space-between; gap: 1rem; height: 64px }
+    .brand { display:flex; align-items:center; gap:.6rem; font-weight: 800; letter-spacing:.2px }
+    .brand-badge { display:grid; place-items:center; width: 34px; height: 34px; border-radius: 10px; background: linear-gradient(135deg, var(--brand), var(--accent)); box-shadow: var(--shadow); }
+    .brand-badge svg { filter: drop-shadow(0 4px 8px rgba(34,211,238,.35)) }
+    .nav-links { display:flex; gap:1rem; align-items:center }
+    .nav-links a { color: var(--text); opacity:.9; padding:.4rem .7rem; border-radius: 8px }
+    .nav-links a:hover { background: rgba(148,163,184,.12) }
+    .menu { display:none }
+
+    .hero { padding: 72px 0 40px }
+    .hero-grid { display:grid; grid-template-columns: 1.2fr .8fr; gap: 2rem; align-items: center }
+    .chip { display:inline-flex; align-items:center; gap:.5rem; padding:.28rem .6rem; border:1px solid rgba(34,211,238,.35); border-radius:999px; font-size:.85rem; background: rgba(34,211,238,.07) }
+    .title { font-size: clamp(2rem, 5vw, 3.25rem); line-height:1.1; margin:.5rem 0 1rem; font-weight: 900 }
+    .subtitle { color: var(--muted); font-size: clamp(1rem, 2.4vw, 1.2rem) }
+    .cta { display:flex; gap:.8rem; margin: 1.25rem 0 0 }
+    .btn { display:inline-flex; align-items:center; gap:.6rem; padding:.8rem 1.05rem; border-radius: 12px; border:1px solid rgba(148,163,184,.2); background: linear-gradient(180deg, rgba(255,255,255,.05), rgba(255,255,255,.02)); color: var(--text); font-weight: 700; box-shadow: var(--shadow) }
+    .btn.primary { border-color: transparent; background: linear-gradient(180deg, var(--brand), #0891b2); color: #06202a }
+    .btn:hover { transform: translateY(-1px) }
+    .panel { background: linear-gradient(180deg, rgba(2,6,23,.9), rgba(15,23,42,.9)); border:1px solid rgba(148,163,184,.15); border-radius: var(--radius); box-shadow: var(--shadow) }
+
+    .badges { display:flex; gap:.6rem; flex-wrap: wrap; margin-top: .9rem }
+    .badge { padding:.28rem .6rem; border-radius:999px; background: rgba(148,163,184,.12); color:#cbd5e1; border: 1px solid rgba(148,163,184,.2); font-size:.83rem }
+
+    .cards { display:grid; grid-template-columns: repeat(3, 1fr); gap: 1rem; margin-top: 1rem }
+    .card { padding: 1.1rem; border-radius: var(--radius); border:1px solid rgba(148,163,184,.15); background: rgba(2,6,23,.55) }
+    .card h3 { margin:.2rem 0 .5rem }
+    .card p { color: var(--muted) }
+
+    .section { padding: 40px 0 }
+    .section h2 { font-size: clamp(1.4rem, 3vw, 2rem); margin: 0 0 .75rem }
+    .section p.lead { color: var(--muted); margin: 0 0 1rem }
+
+    .grid-2 { display:grid; grid-template-columns: repeat(2, 1fr); gap: 1rem }
+    .list { display:grid; gap:.5rem; margin:.6rem 0 0 }
+    .list li { display:flex; gap:.6rem; align-items:flex-start }
+    .kbd { font-family: ui-monospace, SFMono-Regular, Menlo, Monaco, Consolas, "Liberation Mono", "Courier New", monospace; font-size:.86rem; padding:.12rem .4rem; border-radius: 6px; border:1px solid rgba(148,163,184,.25); background: rgba(148,163,184,.12) }
+
+    .contact { padding: 40px; }
+    form { display:grid; gap:.8rem }
+    input, textarea, select { width:100%; padding:.8rem .9rem; border-radius: 12px; border:1px solid rgba(148,163,184,.25); background: rgba(2,6,23,.55); color: var(--text); outline: none }
+    input:focus, textarea:focus, select:focus { box-shadow: 0 0 0 6px var(--ring); border-color: var(--brand) }
+
+    footer { border-top: 1px solid rgba(148,163,184,.15); color:#94a3b8; padding: 30px 0 60px; font-size:.95rem }
+    .footgrid { display:grid; grid-template-columns: 1fr auto; gap: 1rem; align-items:center }
+
+    @media (max-width: 950px) {
+      .hero-grid, .grid-2 { grid-template-columns: 1fr }
+      .cards { grid-template-columns: 1fr; }
+      .nav-links { display:none }
+      .menu { display: inline-flex }
+    }
+  </style>
+</head>
+<body>
+  <header>
+    <div class="container nav">
+      <a class="brand" href="#home" aria-label="Ag‑Tech Canada home">
+        <span class="brand-badge" aria-hidden="true">
+          <svg width="20" height="20" viewBox="0 0 24 24" fill="none" xmlns="http://www.w3.org/2000/svg">
+            <path d="M3 14c3.5-6.5 7-9.5 9-10 2-.5 3 1 4 3s2 4 4 5" stroke="#001219" stroke-width="3" />
+            <path d="M3 14c3.5-6.5 7-9.5 9-10 2-.5 3 1 4 3s2 4 4 5" stroke="#fff" stroke-width="2" />
+          </svg>
+        </span>
+        <span>Ag‑Tech Canada</span>
+      </a>
+      <nav class="nav-links">
+        <a href="#solutions">Solutions</a>
+        <a href="#connectivity">Connectivity</a>
+        <a href="#fleets">Fleets</a>
+        <a href="#about">About</a>
+        <a href="#contact" class="kbd">Contact</a>
+      </nav>
+      <button class="menu kbd" aria-label="Open menu" onclick="document.querySelector('.nav-links')?.classList.toggle('open'); this.textContent=this.textContent==='Menu'?'Close':'Menu'">Menu</button>
+    </div>
+  </header>
+
+  <main id="home" class="container hero">
+    <div class="hero-grid">
+      <div>
+        <span class="chip">Telemetry • Cellular • Satellite • LoRaWAN</span>
+        <h1 class="title">Remote Connectivity for Agriculture & Heavy‑Duty Trucks</h1>
+        <p class="subtitle">We design and deploy rugged telemetry systems that keep your farm assets and fleets online—across the prairies and beyond. Real‑time data, fewer site visits, lower downtime.</p>
+        <div class="cta">
+          <a class="btn primary" href="#contact">Get a quote</a>
+          <a class="btn" href="#solutions">Explore solutions</a>
+        </div>
+        <div class="badges" aria-label="Highlights">
+          <span class="badge">Canada‑wide</span>
+          <span class="badge">Rugged hardware</span>
+          <span class="badge">Install & support</span>
+          <span class="badge">Modbus • CAN (J1939) • MQTT</span>
+        </div>
+      </div>
+      <aside class="panel" style="padding:1rem">
+        <div class="cards">
+          <div class="card">
+            <h3>Grain & Farm Ops</h3>
+            <p>Bin temp & moisture, bunker cables, weather, soil probes, pumps & pivots, yard cameras.</p>
+          </div>
+          <div class="card">
+            <h3>Fleet & Mobile Assets</h3>
+            <p>ELD/diagnostics (J1939/OBD‑II), GPS/telematics, reefer/temperatures, dashcams, TPMS.</p>
+          </div>
+          <div class="card">
+            <h3>Always‑On Connectivity</h3>
+            <p>LTE/5G, Cat‑M1/NB‑IoT, private LoRaWAN, and satellite (incl. Starlink) for remote yards.</p>
+          </div>
+        </div>
+      </aside>
+    </div>
+  </main>
+
+  <section id="solutions" class="section container">
+    <h2>Built for the field. Proven in the cold.</h2>
+    <p class="lead">From single bins to distributed fleets, we bring together sensors, gateways, and cloud dashboards into a tidy package. We handle design, install, and ongoing support.</p>
+    <div class="grid-2">
+      <div class="panel" style="padding:1rem">
+        <h3 style="margin-top:.2rem">Agriculture solutions</h3>
+        <ul class="list">
+          <li>🌾 &nbsp;<b>Grain storage</b> — temperature & moisture cables, fan control, CO₂, spoilage alerts</li>
+          <li>🚰 &nbsp;<b>Pumps & pivots</b> — start/stop, flow, pressure, power monitoring</li>
+          <li>🌦️ &nbsp;<b>Weather & soil</b> — on‑farm stations, rain, wind, soil moisture/EC</li>
+          <li>🔐 &nbsp;<b>Yard & asset security</b> — IP cameras, smart gates, remote NVR access</li>
+        </ul>
+      </div>
+      <div class="panel" style="padding:1rem">
+        <h3 style="margin-top:.2rem">Heavy truck & equipment</h3>
+        <ul class="list">
+          <li>🛰️ &nbsp;<b>Telematics</b> — live GPS, geofences, utilization, idling & fuel analytics</li>
+          <li>🧠 &nbsp;<b>Diagnostics</b> — engine data via <span class="kbd">CAN J1939</span> / <span class="kbd">OBD‑II</span></li>
+          <li>❄️ &nbsp;<b>Reefer monitoring</b> — temperature, door events, battery/solar health</li>
+          <li>📷 &nbsp;<b>Safety</b> — AI dashcams, driver scorecards, panic buttons</li>
+        </ul>
+      </div>
+    </div>
+  </section>
+
+  <section id="connectivity" class="section container">
+    <h2>Connectivity that fits your map</h2>
+    <p class="lead">We mix and match transport layers to meet your coverage and budget—then provide one dashboard and one support number.</p>
+    <div class="cards">
+      <div class="card">
+        <h3>LTE/5G</h3>
+        <p>High‑bandwidth, low‑latency backhaul with Canadian carriers. Ideal for cameras and control.</p>
+      </div>
+      <div class="card">
+        <h3>Cat‑M1 / NB‑IoT</h3>
+        <p>Battery‑friendly cellular for sensors and meters that need years of life per charge.</p>
+      </div>
+      <div class="card">
+        <h3>LoRaWAN</h3>
+        <p>Private long‑range on‑farm networks—connect dozens of sensors to a single gateway.</p>
+      </div>
+      <div class="card">
+        <h3>Satellite</h3>
+        <p>Starlink and narrowband options for sites beyond cellular. Hybrid failover supported.</p>
+      </div>
+      <div class="card">
+        <h3>Edge + Cloud</h3>
+        <p>MQTT/HTTPS to the cloud plus local logic at the edge for low‑latency control.</p>
+      </div>
+      <div class="card">
+        <h3>Protocols</h3>
+        <p>Modbus RTU/TCP, RS‑485, 4‑20mA, SDI‑12, CAN J1939, BLE, and more.</p>
+      </div>
+    </div>
+  </section>
+
+  <section id="fleets" class="section container">
+    <h2>Turn data into decisions</h2>
+    <p class="lead">Alerting, reports, and API access. Keep maintenance proactive and operations lean.</p>
+    <div class="grid-2">
+      <div class="panel" style="padding:1rem">
+        <h3>Dashboards & alerts</h3>
+        <ul class="list">
+          <li>📈 Live dashboards for bins, pumps, trucks, and reefers</li>
+          <li>🔔 SMS/email/app alerts with escalation and quiet hours</li>
+          <li>🗺️ Asset maps, geofences, and breadcrumb trails</li>
+          <li>🧩 Export & APIs for your ERP/maintenance system</li>
+        </ul>
+      </div>
+      <div class="panel" style="padding:1rem">
+        <h3>Hardware & install</h3>
+        <ul class="list">
+          <li>🧰 Site surveys, hardware kits, cabling, enclosures, solar power</li>
+          <li>🛡️ Rugged IP‑rated gear for Canadian winters</li>
+          <li>🔄 Managed data plans, firmware updates, remote support</li>
+          <li>🧾 Straightforward pricing: hardware + service bundles</li>
+        </ul>
+      </div>
+    </div>
+  </section>
+
+  <section id="about" class="section container">
+    <h2>About Ag‑Tech Canada</h2>
+    <p class="lead">We’re based in Alberta and serve customers across Western Canada. Our team has deep experience in agriculture technology, grain monitoring, and fleet telematics. We speak farm and fleet.</p>
+  </section>
+
+  <section id="contact" class="section container panel contact">
+    <h2 style="margin-top:0">Let’s connect</h2>
+    <p class="lead">Tell us about your site or fleet. We’ll propose a right‑sized kit and a simple plan.</p>
+    <form method="post" action="mailto:dan@ag-tech.ca" enctype="text/plain">
+      <div class="grid-2">
+        <div>
+          <label for="name">Name</label>
+          <input id="name" name="Name" placeholder="Jane Doe" required />
+        </div>
+        <div>
+          <label for="email">Email</label>
+          <input id="email" name="Email" type="email" placeholder="name@example.com" required />
+        </div>
+      </div>
+      <div class="grid-2">
+        <div>
+          <label for="company">Company</label>
+          <input id="company" name="Company" placeholder="Farm or fleet name" />
+        </div>
+        <div>
+          <label for="topic">Interest</label>
+          <select id="topic" name="Interest">
+            <option>Agriculture — bins, pumps, sensors</option>
+            <option>Fleet — telematics, cameras, reefer</option>
+            <option>Hybrid — farm + trucks</option>
+            <option>Other</option>
+          </select>
+        </div>
+      </div>
+      <div>
+        <label for="message">Project details</label>
+        <textarea id="message" name="Details" rows="5" placeholder="Sites, assets, goals, timeline…"></textarea>
+      </div>
+      <button class="btn primary" type="submit">Send</button>
+      <p style="color:var(--muted); font-size:.9rem">Prefer email? Write us at <a href="mailto:dan@ag-tech.ca">dan@ag-tech.ca</a>.</p>
+    </form>
+  </section>
+
+  <footer>
+    <div class="container footgrid">
+      <div>
+        © <span id="yr"></span> Ag‑Tech Canada • Calgary, AB • Canada‑wide service
+      </div>
+      <div>CRA BN & vendor details available on request</div>
+    </div>
+  </footer>
+
+  <script>
+    document.getElementById('yr').textContent = new Date().getFullYear()
+  </script>
+
+  <!-- Optional: paste your analytics snippet here -->
+</body>
+</html>
